@@ -45,16 +45,21 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .btn-accent{background:var(--accent);color:#fff}
 .btn-sm{padding:8px 14px;font-size:.88rem}
 
-/* 히어로 */
-.hero{padding:0 0 56px;background:#fff}
-        .hero-art{width:100%;border-radius:0;overflow:hidden;border-bottom:3px solid var(--primary);background:var(--soft)}
-        .hero-art svg{width:100%;height:clamp(170px,24vw,280px);display:block}
-        .hero .wrap{padding-top:36px;display:grid;gap:18px;max-width:880px}
+/* 히어로 — 공통 뼈대 먼저, 그 다음 지역 분위기(밝음/어두움) 덮어쓰기 */
 .hero .badge{display:inline-block;background:var(--soft);color:var(--primary);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.86rem;font-weight:700;margin-bottom:14px}
 .hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .hero-facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px dashed var(--line)}
 .hero-facts b{display:block;font-family:var(--head);font-size:1.5rem;color:var(--primary)}
 .hero-facts span{font-size:.86rem;color:var(--ink-soft)}
+.hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero > svg{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.hero .scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(255,255,255,.88) 0%,rgba(255,255,255,.54) 44%,rgba(255,255,255,0) 82%)}
+.hero .wrap{padding:clamp(46px,6.5vw,82px) 0 clamp(42px,5.5vw,70px)}
+.hero .in{max-width:640px}
+.hero .badge{background:#fff;color:var(--primary);border-color:var(--line)}
+       .hero h1{color:var(--ink)}
+       .hero .lead{color:#475264}
+       .hero-facts{border-top-color:rgba(0,0,0,.16)}
 
 /* 페이지 히어로 */
 .page-hero{background:var(--soft);padding:40px 0 34px;border-bottom:1px solid var(--line)}
@@ -148,8 +153,10 @@ footer a{color:#cbd5e1}
 
 @media(max-width:900px){
   .g3,.g4{grid-template-columns:repeat(2,1fr)}
-  .hero .wrap{grid-template-columns:1fr !important}
   .foot-grid{grid-template-columns:1fr 1fr}
+  /* 좁아지면 글이 화면 전체를 쓰므로 가림막을 위아래 방향으로 바꿔 글자가 항상 읽히게 */
+  .hero .in{max-width:none}
+  .hero .scrim{background:linear-gradient(180deg,rgba(255,255,255,.82) 0%,rgba(255,255,255,.88) 60%,rgba(255,255,255,.94) 100%)}
 }
 @media(max-width:640px){
   section{padding:38px 0}
@@ -159,4 +166,6 @@ footer a{color:#cbd5e1}
   .row2{grid-template-columns:1fr}
   .float-cta{left:16px;right:16px}
   .float-cta .btn{flex:1;justify-content:center}
+  .hero-facts{gap:16px}
+  .hero-facts>div{min-width:44%}
 }
