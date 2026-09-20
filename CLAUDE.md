@@ -15,7 +15,7 @@
 | `index.html` | 홈 (히어로 SVG = temple-roof 모티프) |
 | `schools.html` | 영주 초·중·고 39곳 목록 + 검색 |
 | `school/*.html` | **학교별 정적 페이지 39개** — SEO 의 핵심. 학교당 국어·영어·수학·사회·과학·코딩 키워드 |
-| `teachers.html` | 선생님 (영주 방문 0명 + 화상 673명) |
+| `teachers.html` | 선생님 (화상 673명 — 영주 방문 선생님이 0명이라 방문 관련 내용은 감춰져 있다) |
 | `online.html` | 화상과외 안내 |
 | `blog.html` · `blog/*.html` | 데일리 글 |
 | `teachers-data.js` | 선생님 데이터 (자동 생성 — 직접 고치지 말 것) |
