@@ -4,9 +4,8 @@
 홈 `~/CLAUDE.md` 규칙을 그대로 따른다 (세션 하나 = 저장소 하나, 시작 때 pull, 끝날 때 commit+push, 작업로그 기록).
 
 ## 도메인 / 배포
-- 도메인: **아직 없음**. 현재 주소 `https://x26589334-cpu.github.io/yeongju-tutoring/`
-- 도메인을 붙일 때: ① `CNAME` 파일 생성 ② 이 파일과 `sitemap.xml`·`robots.txt`·각 페이지 `canonical`/`og:url` 의 주소를 한 번에 교체
-  → 교체는 생성기로 한다: `사이트관리/도구/지역과외/regions.js` 의 `siteUrl` 수정 후 재생성
+- 도메인: **nadoteach.co.kr** (가비아, 2026-09-21 연결). `CNAME` 파일 있음 · 주소 `https://nadoteach.co.kr/`
+- 도메인을 바꿀 때: `사이트관리/도구/지역과외/regions.js` 의 `domain` 을 고치고 재생성 → 사이트 안 주소(sitemap·canonical·og:url·robots)와 `CNAME` 이 같이 바뀐다. GitHub Pages 설정의 Custom domain 도 맞출 것
 - GA4 측정 ID 미발급. `analytics.js` 의 `GA_ID` 가 비어 있어 지금은 아무것도 보내지 않는다. 발급하면 그 한 줄만 채우고 `사이트관리/사이트대장.md` 10절에 적는다.
 
 ## 이 사이트만의 구조

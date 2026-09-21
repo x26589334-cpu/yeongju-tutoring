@@ -3,7 +3,7 @@
    각 글의 <title>·<meta name="description">·<time datetime> 을 읽는다. */
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..');
-const SITE = 'https://x26589334-cpu.github.io/yeongju-tutoring';
+const SITE = 'https://nadoteach.co.kr';
 const posts = fs.readdirSync(path.join(ROOT, 'blog')).filter(f => f.endsWith('.html')).map(f => {
   const h = fs.readFileSync(path.join(ROOT, 'blog', f), 'utf8');
   const g = (re, d) => { const m = h.match(re); return m ? m[1].trim() : d; };
