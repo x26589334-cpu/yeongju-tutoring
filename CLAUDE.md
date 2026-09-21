@@ -1,6 +1,12 @@
 # 영주과외 (yeongju-tutoring) — 작업 규칙
 
-경상북도 영주시 지역 타겟 과외 사이트. GitHub Pages 정적 사이트, 빌드 없음.
+경상북도 영주시 지역 타겟 과외 사이트. 정적 사이트, 빌드 없음.
+**호스팅은 Cloudflare Pages**(2026-09-21 이전). main 에 push 하면 `.github/workflows/deploy.yml` 이 GitHub Actions 에서 Cloudflare 로 직접 올린다(Direct Upload — Cloudflare 빌드 월 500회 제한과 무관).
+- Cloudflare 대시보드에서 이 프로젝트를 "Connect to Git" 으로 다시 만들지 말 것. Direct Upload 타입은 바꿀 수 없다.
+- 배포 실패는 GitHub 저장소 → Actions 탭에서 본다. 저장소는 지금 public(Actions 무제한). private 로 바꾸면 계정당 월 2,000분에서 차감.
+- `*.md`·`tools/`·`CNAME` 은 사이트에 올라가지 않는다(내부 메모 보호).
+- **사이트 안 주소는 `.html` 없이 쓴다** (`school/gumi-geumo-go`, `blog/글주소`, 홈은 `./`). Cloudflare 가 `/x.html` 을 `/x` 로 넘기기 때문 — 넘겨지는 주소가 canonical·sitemap 에 있으면 검색엔진이 싫어한다. 파일 이름은 그대로 `x.html`. 손으로 글을 쓸 때도 링크에 `.html` 을 붙이지 말 것(생성기를 다시 돌리면 자동으로 고쳐지긴 한다).
+- `404.html` 이 있어야 없는 주소에 404 가 나간다. 지우지 말 것.
 홈 `~/CLAUDE.md` 규칙을 그대로 따른다 (세션 하나 = 저장소 하나, 시작 때 pull, 끝날 때 commit+push, 작업로그 기록).
 
 ## 도메인 / 배포

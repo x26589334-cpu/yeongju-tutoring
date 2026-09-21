@@ -19,7 +19,7 @@ const posts = fs.readdirSync(path.join(ROOT, 'blog')).filter(f => f.endsWith('.h
 let bl = fs.readFileSync(path.join(ROOT, 'blog.html'), 'utf8');
 const items = posts.map(p => `<article class="post-item">
         <time datetime="${p.date}">${p.date}</time>
-        <h3><a href="blog/${p.slug}.html">${p.title}</a></h3>
+        <h3><a href="blog/${p.slug}">${p.title}</a></h3>
         <p class="muted">${p.summary}</p>
       </article>`).join('\n      ');
 bl = bl.replace(/<div class="post-list">[\s\S]*?<\/div>\n    <div class="hl-box"/, `<div class="post-list">\n      ${items}\n    </div>\n    <div class="hl-box"`);
@@ -33,7 +33,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <description>경상북도 영주시 지역 과외·학습 정보</description>
 <language>ko</language>
 <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-${posts.slice(0, 40).map(p => `<item><title><![CDATA[${p.title}]]></title><link>${SITE}/blog/${p.slug}.html</link><guid>${SITE}/blog/${p.slug}.html</guid><pubDate>${new Date(p.date + 'T09:00:00+09:00').toUTCString()}</pubDate><description><![CDATA[${p.summary}]]></description></item>`).join('\n')}
+${posts.slice(0, 40).map(p => `<item><title><![CDATA[${p.title}]]></title><link>${SITE}/blog/${p.slug}</link><guid>${SITE}/blog/${p.slug}</guid><pubDate>${new Date(p.date + 'T09:00:00+09:00').toUTCString()}</pubDate><description><![CDATA[${p.summary}]]></description></item>`).join('\n')}
 </channel></rss>`;
 fs.writeFileSync(path.join(ROOT, 'rss.xml'), rss, 'utf8');
 
@@ -41,9 +41,9 @@ fs.writeFileSync(path.join(ROOT, 'rss.xml'), rss, 'utf8');
 const urls = [];
 const push = (loc, pri) => urls.push(`  <url><loc>${SITE}/${loc}</loc><lastmod>${new Date().toISOString().slice(0,10)}</lastmod><priority>${pri}</priority></url>`);
 push('', '1.0');
-['schools.html','teachers.html','online.html','blog.html'].forEach(p => push(p, '0.9'));
-fs.readdirSync(path.join(ROOT, 'school')).filter(f => f.endsWith('.html')).forEach(f => push('school/' + f, '0.8'));
-posts.forEach(p => push('blog/' + p.slug + '.html', '0.7'));
+['schools','teachers','online','blog'].forEach(p => push(p, '0.9'));
+fs.readdirSync(path.join(ROOT, 'school')).filter(f => f.endsWith('.html')).forEach(f => push('school/' + f.replace(/.html$/, ''), '0.8'));
+posts.forEach(p => push('blog/' + p.slug, '0.7'));
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>`, 'utf8');
 
