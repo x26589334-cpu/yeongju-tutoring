@@ -12,6 +12,7 @@
 ## 도메인 / 배포
 - 도메인: **nadoteach.co.kr** (가비아, 2026-09-21 연결). `CNAME` 파일 있음 · 주소 `https://nadoteach.co.kr/`
 - 도메인을 바꿀 때: `사이트관리/도구/지역과외/regions.js` 의 `domain` 을 고치고 재생성 → 사이트 안 주소(sitemap·canonical·og:url·robots)와 `CNAME` 이 같이 바뀐다. GitHub Pages 설정의 Custom domain 도 맞출 것
+- 검색엔진 소유확인: 네이버 `a656c0dae256f97decbca28dd74962ed348a54d2` · 구글 `FeQbavMOsvD-Pei1p2TSo0thuyTluyP04gHf5I1MtzU` — 홈 `<head>` 에 생성기가 넣는다(`regions.js` 의 `verify`). **`index.html` 에 손으로 넣지 말 것** — 재생성하면 사라진다. 코드를 바꾸려면 `verify` 를 고치고 재생성.
 - GA4 측정 ID 미발급. `analytics.js` 의 `GA_ID` 가 비어 있어 지금은 아무것도 보내지 않는다. 발급하면 그 한 줄만 채우고 `사이트관리/사이트대장.md` 10절에 적는다.
 
 ## 이 사이트만의 구조
