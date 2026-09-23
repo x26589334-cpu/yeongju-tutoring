@@ -165,8 +165,12 @@ footer a:hover{color:var(--primary)}
   .nav-links{display:none}
   .foot-grid{grid-template-columns:1fr}
   .row2{grid-template-columns:1fr}
-  .float-cta{left:16px;right:16px}
-  .float-cta .btn{flex:1;justify-content:center}
+  /* 전화번호가 두 줄로 접히지 않게: 줄바꿈 금지 + 글자·여백을 한 단계 줄인다 */
+  .float-cta{left:12px;right:12px;bottom:12px;gap:8px}
+  .float-cta .btn{flex:1;justify-content:center;white-space:nowrap;padding:12px 10px;font-size:.92rem;gap:6px}
   .hero-facts{gap:16px}
   .hero-facts>div{min-width:44%}
+}
+@media(max-width:380px){
+  .float-cta .btn{font-size:.86rem;padding:11px 6px}
 }
