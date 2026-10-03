@@ -22,7 +22,7 @@ const items = posts.map(p => `<article class="post-item">
         <h3><a href="blog/${p.slug}">${p.title}</a></h3>
         <p class="muted">${p.summary}</p>
       </article>`).join('\n      ');
-bl = bl.replace(/<div class="post-list">[\s\S]*?<\/div>\n    <div class="hl-box"/, `<div class="post-list">\n      ${items}\n    </div>\n    <div class="hl-box"`);
+bl = bl.replace(/<div class="post-list">[\s\S]*?<\/div>\r?\n\s*<div class="hl-box"/, `<div class="post-list">\r\n      ${items}\r\n    </div>\r\n    <div class="hl-box"`);
 fs.writeFileSync(path.join(ROOT, 'blog.html'), bl, 'utf8');
 
 /* rss.xml */
