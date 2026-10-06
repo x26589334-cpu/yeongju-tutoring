@@ -53,6 +53,10 @@ header{position:sticky;top:0;z-index:50;background:rgb(251,250,243);border-botto
 .hero-facts span{font-size:.86rem;color:var(--ink-soft)}
 .hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line)}
 .hero > svg{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.hero-art{position:absolute;top:0;bottom:0;right:0;left:0;z-index:-2}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--pos)}
+.hero-credit{position:absolute;right:12px;bottom:6px;font-size:.68rem;color:var(--ink-soft);opacity:.7;z-index:1}
+.hero-right{left:auto;width:64%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%);mask-image:linear-gradient(90deg,transparent 0,#000 32%)}
 .hero .scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(251,250,243,.9) 0%,rgba(251,250,243,.55) 44%,rgba(251,250,243,0) 82%)}
 .hero .wrap{padding:clamp(46px,6.5vw,82px) 0 clamp(42px,5.5vw,70px)}
 .hero .in{max-width:640px}
@@ -199,6 +203,11 @@ footer a:hover{color:var(--primary)}
   .foot-grid{grid-template-columns:1fr 1fr}
   /* 좁아지면 글이 화면 전체를 쓰므로 가림막을 위아래 방향으로 바꿔 글자가 항상 읽히게 */
   .hero .in{max-width:none}
+  .hero-art{left:0;width:100%;-webkit-mask-image:none;mask-image:none}
+  .hero-art img{object-position:var(--mpos)}
+  .hero.has-art .wrap{padding-bottom:290px}
+  .hero.has-art .scrim{background:none}
+  .hero.has-art .hero-art{top:auto;height:320px;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 28%);mask-image:linear-gradient(180deg,transparent 0,#000 28%)}
   .hero .scrim{background:linear-gradient(180deg,rgba(251,250,243,.8) 0%,rgba(251,250,243,.86) 60%,rgba(251,250,243,.93) 100%)}
 }
 @media(max-width:640px){
