@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<rect width="64" height="64" rx="14" fill="#55804b"/>
-<text x="32" y="42" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="23" font-weight="700" letter-spacing="-1" fill="#fff" text-anchor="middle">영주</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#55804b"/><g stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M13 41 V50"/><path d="M21 38.5 V47.5"/><path d="M29 35 V44"/><path d="M37 31 V40"/><path d="M45 27 V36"/><path d="M53 24 V33"/></g><path d="M8 42 C 20 40 24 36 32 34 S 46 25 57 23" stroke="#fff" stroke-width="5.5" fill="none" stroke-linecap="round"/><path d="M9 53 q5.75 -4 11.5 0 t11.5 0 t11.5 0 t11.5 0" stroke="#fff" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.7"/></svg>
